@@ -1,0 +1,58 @@
+o install Ansible within a Python virtual environment on Ubuntu, follow these steps: Install Python3 and pip.
+Ensure you have Python3 and its package installer, pip, installed on your system.
+Code
+
+    sudo apt update
+    sudo apt install python3 python3-pip
+
+
+Install python3-venv.
+This package provides the venv module for creating virtual environments.
+Code
+
+    sudo apt install python3-venv
+
+
+create a virtual environment.
+Navigate to your desired directory and create a new virtual environment. Replace my_ansible_env with your preferred environment name.
+Code
+
+    mkdir ansible_projects
+    cd ansible_projects
+    python3 -m venv (my_ansible_env)
+
+
+Activate the virtual environment.
+This step changes your shell's environment to use the Python and pip within your newly created virtual environment.
+Code
+
+    source my_ansible_env/bin/activate
+
+
+Your command prompt should now display the virtual environment's name, e.g., (my_ansible_env) user@hostname:~/ansible_projects$.
+Upgrade pip within the virtual environment (recommended):
+Ensure you have the latest version of pip within your virtual environment for better package management.
+Code
+
+    pip install --upgrade pip
+
+
+install ansible.
+Now, install Ansible using pip. It will be installed within your active virtual environment.
+Code
+
+    pip install ansible
+
+
+Verify the installation.
+Confirm that Ansible is installed and accessible within your virtual environment.
+Code
+
+    ansible --version
+
+
+The output should show the Ansible version and indicate that it's running from your virtual environment's Python path.
+To exit the virtual environment, use the deactivate command:
+Code
+
+deactivate
